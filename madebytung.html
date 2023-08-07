@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video</title>
+  <!-- Favicon -->
+  <link rel="icon" href="bongg7.gif">
+  <!-- Bootstrap -->
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link href="aos.css" rel="stylesheet">
+  <!-- lightbox -->
+  <link rel="stylesheet" href="lightbox.min.css">
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #content-section {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .custom-video-size {
+      max-width: 100%;
+      max-height: 80vh;
+    }
+
+    .content-slide-up {
+      animation: slideUp 0.5s forwards;
+    }
+
+    .content-slide-down {
+      animation: slideDown 0.5s forwards;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="overflow-hidden">
+  <!-- content section -->
+  <div id="content-section">
+    <img src="hinh-anh-dong-tinh-yeu-trai-tim-cam-roi.gif" class="confetti" alt="confetti">
+    <div class="container py-4">
+      <div class="row my-4">
+        <div class="col mt-5 pt-5" data-aos="fade-up" data-aos-duration="1000">
+          <div class="my">
+            <div class="card">
+              <div class="card-body text-center">
+                <video controls autoplay class="custom-video-size">
+                  <source src="ngaydautien.mp4" autoplay type="video/mp4">
+                </video>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="toggle-content">Dịch lên/dịch xuống</button>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script src="jquery-3.7.0.min.js"></script>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="aos.js"></script>
+  <script src="lightbox.min.js"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#toggle-content').click(function() {
+        $('#content-section').toggleClass('content-slide-up content-slide-down');
+      });
+    });
+  </script>
+</body>
+</html>
